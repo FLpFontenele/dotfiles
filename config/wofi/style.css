@@ -1,0 +1,60 @@
+/* --- JANELA PRINCIPAL --- */
+window {
+    margin: 0px;
+    border: 2px solid #bd93f9; /* Borda Roxa Neon */
+    background-color: rgba(40, 42, 54, 0.9); /* Fundo Escuro quase transparente */
+    border-radius: 15px; /* Cantos arredondados */
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 14px;
+}
+
+/* --- CAMPO DE BUSCA --- */
+#input {
+    margin: 5px;
+    border: none;
+    color: #f8f8f2; /* Texto Claro */
+    background-color: #44475a; /* Fundo da barra de busca */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* --- LISTA DE RESULTADOS --- */
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* --- ITENS DA LISTA --- */
+#entry {
+    margin: 5px 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+/* --- ITEM SELECIONADO (Onde o cursor está) --- */
+#entry:selected {
+    background-color: #bd93f9; /* Fundo Roxo */
+    color: #282a36; /* Texto Escuro para contraste */
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #f8f8f2;
+}
+
+#entry:selected #text {
+    color: #282a36;
+}
+
+/* --- ÍCONES --- */
+#img {
+    margin-right: 10px;
+    background-color: transparent;
+}

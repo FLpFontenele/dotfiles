@@ -1,0 +1,55 @@
+* {
+    background-image: none;
+    font-family: "FiraCode Nerd Font", monospace;
+}
+
+window {
+    background-color: rgba(26, 27, 38, 0.85); /* Fundo Escuro Transparente */
+}
+
+button {
+    color: #c0caf5;
+    background-color: #1a1b26;
+    border: 3px solid #414868; /* Borda Cinza Azulada */
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    margin: 10px;
+    transition: all 0.3s ease; /* Animação Suave */
+}
+
+button:hover {
+    background-color: #282a36;
+    border-color: #bd93f9; /* Borda Roxa ao passar o mouse */
+    color: #bd93f9;
+}
+
+button:focus {
+    background-color: #44475a;
+    border-color: #ff79c6; /* Rosa se selecionado */
+}
+
+/* --- ÍCONES --- */
+/* O Wlogout busca ícones padrão em /usr/share/wlogout/icons */
+/* Se quiser ícones personalizados, coloque o caminho completo em url(...) */
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
