@@ -1,63 +1,125 @@
+/* --- Dracula Islands (Fundo Preto, Sem Bordas, Rede Ciano) --- */
+
 * {
     border: none;
     border-radius: 0;
-    font-family: "FiraCode Nerd Font";
+    font-family: "JetBrainsMono Nerd Font", "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: bold;
     font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0.0); /* Fundo 100% Transparente */
-    color: #c0caf5;
+    background-color: transparent;
+    color: #f8f8f2;
 }
 
-/* Espaços de Trabalho (Workspaces) */
-#workspaces {
-    background: #1a1b26;
+tooltip {
+    background: #282a36;
+    border: 1px solid #44475a;
+    border-radius: 10px;
+}
+
+/* --- ILHAS (GRUPOS) - Fundo preto, sem bordas --- */
+#hardware, #utils {
+    background-color: #1e1e2e;
+    padding: 0px 10px;
     margin: 5px 5px;
-    padding: 5px 5px;
     border-radius: 15px;
-    border: 1px solid #7aa2f7; /* Borda Azul */
 }
 
+/* --- CENTRO --- */
+#workspaces {
+    background-color: #1e1e2e;
+    margin: 5px 0px 5px 5px;
+    padding: 0px 5px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+#taskbar {
+    background-color: #1e1e2e;
+    margin: 5px 5px 5px 0px;
+    padding: 0px 10px;
+    border-radius: 0px 15px 15px 0px;
+    border-left: 1px solid #44475a;
+}
+
+/* --- ÍCONES E TEXTOS GERAIS --- */
+#cpu, #memory, #disk, #pulseaudio, #clock {
+    background-color: transparent;
+    color: #f8f8f2;
+    padding: 0 6px;
+    margin: 0;
+}
+
+#cpu { color: #ff79c6; }       /* Rosa */
+#memory { color: #8be9fd; }    /* Ciano */
+#disk { color: #f1fa8c; }      /* Amarelo */
+#pulseaudio { color: #bd93f9; margin-right: 5px; } /* Roxo */
+#clock { color: #f8f8f2; }
+
+/* --- CORREÇÃO DA REDE (Ethernet) --- */
+/* Forçando a cor Ciano (Azul Gelo) */
+#network {
+    background-color: transparent;
+    color: #8be9fd; /* Define a cor do texto/ícone como Ciano */
+    padding: 0 6px;
+    margin: 0;
+    margin-right: 5px;
+}
+
+/* Regra extra para garantir que o ícone pegue a cor */
+#network label {
+    color: #8be9fd;
+}
+
+
+/* --- BOTÕES --- */
 #workspaces button {
     padding: 0 5px;
-    background: transparent;
-    color: #7aa2f7;
-    border-bottom: 2px solid transparent;
+    color: #6272a4;
 }
 
 #workspaces button.active {
-    color: #bb9af7;
-    border-bottom: 2px solid #bb9af7; /* Sublinhado Roxo no ativo */
+    color: #bd93f9;
+    background-color: transparent;
+    border-bottom: 2px solid #bd93f9;
 }
 
-/* Cápsulas dos Módulos (Direita) */
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray {
-    padding: 0 10px;
-    margin: 5px 3px;
-    background-color: #1a1b26;
-    color: #c0caf5;
+#workspaces button:hover {
+    color: #f8f8f2;
+}
+
+#taskbar button {
+    padding: 0 5px;
+    color: #f8f8f2;
+}
+
+#taskbar button.active {
+    background-color: #44475a;
+    border-radius: 10px;
+}
+
+#taskbar button:hover {
+    background-color: #6272a4;
+    border-radius: 10px;
+}
+
+#custom-launcher {
+    background-color: #bd93f9;
+    color: #282a36;
+    padding: 0px 15px;
+    margin: 5px 5px;
+    margin-left: 10px;
     border-radius: 15px;
-    border: 1px solid #414868;
+    font-size: 18px;
 }
 
-/* Destaques de cor */
-#clock {
-    color: #bb9af7;
-    border-color: #bb9af7;
-}
-
-#battery.charging {
-    color: #9ece6a;
-    border-color: #9ece6a;
-}
-
-#network.disconnected {
-    background-color: #f7768e;
-    color: #1a1b26;
-}
-
-#pulseaudio.muted {
-    color: #f7768e;
+#custom-power {
+    background-color: #ff5555;
+    color: #f8f8f2;
+    padding: 0px 15px;
+    margin: 5px 5px;
+    margin-right: 10px;
+    border-radius: 15px;
 }

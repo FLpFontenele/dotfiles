@@ -1,68 +1,98 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
-    "spacing": 4,
-    "margin-top": 0,
-    "margin-bottom": 0,
-    
-    // Módulos (Esquerda, Centro, Direita)
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "cpu", "memory", "network", "battery", "tray"],
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 40,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
 
-    // --- Detalhes dos Módulos ---
+    "modules-left": ["custom/launcher", "group/hardware"],
+    "modules-center": ["hyprland/workspaces", "wlr/taskbar"],
+    "modules-right": ["group/utils", "custom/power"],
+
+    // --- GRUPO HARDWARE (Esquerda) ---
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "disk"]
+    },
+
+    // --- GRUPO UTILS (Direita - Agora com Rede) ---
+    "group/utils": {
+        "orientation": "horizontal",
+        "modules": ["network", "pulseaudio", "clock"]
+    },
+
+    // --- MÓDULOS ---
+
+    "custom/launcher": {
+        "format": "  ",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
 
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}"
+        "on-click": "activate",
+        "persistent_workspaces": { "1": [], "2": [], "3": [], "4": [] }
     },
 
-    "clock": {
-        "format": " {:%H:%M   %d/%m}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    // --- NOVO: Ícones dos Apps Abertos ---
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "ignore-list": ["wofi"]
     },
 
     "cpu": {
+        "interval": 10,
         "format": " {usage}%",
-        "tooltip": false
+        "max-length": 10
     },
 
     "memory": {
-        "format": " {}%"
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
     },
 
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+    "disk": {
+        "interval": 30,
+        "format": " {percentage_used}%",
+        "path": "/"
     },
 
+    // --- NOVO: Rede Ethernet ---
     "network": {
-        "format-wifi": " {essid}",
-        "format-ethernet": " Eth",
-        "format-disconnected": "⚠ Off",
-        "format-alt": "{ipaddr}"
+        "format-ethernet": "", 
+        "format-disconnected": "⚠",
+        "tooltip-format": "{ipaddr}",
+        "on-click": "kitty --title 'nmtui' nmtui"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": " Muted",
+        "format-muted": "",
+        "on-click": "pavucontrol",
         "format-icons": {
-            "headphone": "",
             "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+        }
     },
-    
-    "tray": {
-        "spacing": 10
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout"
     }
 }
