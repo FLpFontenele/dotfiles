@@ -1,0 +1,28 @@
+[general]
+# Sensibilidade (aumente se as barras ficarem baixas demais)
+sensitivity = 100
+framerate = 60
+autosens = 1
+
+[input]
+# No Fedora, geralmente o 'pulse' ou 'pipewire' funcionam melhor
+method = pulse
+source = auto
+
+[output]
+method = ncurses
+
+[color]
+# Ativar cores gradientes (Dracula)
+gradient = 1
+gradient_count = 4
+
+# Do Grave (Baixo) para o Agudo (Alto)
+gradient_color_1 = '#8be9fd' ; Ciano
+gradient_color_2 = '#bd93f9' ; Roxo
+gradient_color_3 = '#ff79c6' ; Rosa
+gradient_color_4 = '#ff5555' ; Vermelho
+
+[smoothing]
+# Deixa o movimento mais suave ("manteiga")
+noise_reduction = 0.77
