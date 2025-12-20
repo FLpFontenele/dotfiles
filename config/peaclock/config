@@ -1,0 +1,39 @@
+# --- Peaclock Dracula Theme ---
+
+# Modo de exibição: digital, binary, ascii
+mode digital
+
+# Estilo dos caracteres: 
+# clear (limpo), block (blocos), border (borda)
+style block
+
+# Mostrar data? (0 = não, 1 = sim)
+date 1
+
+# Mostrar segundos?
+seconds 1
+
+# Formato de 24h
+hour-24 1
+
+# --- CORES DRACULA ---
+# As cores usam Hexadecimal (#RRGGBB)
+
+# Cor dos números ativos (Hora atual) -> Roxo Dracula
+active-fg #bd93f9
+
+# Cor dos números inativos (Fundo dos números) -> Cinza Escuro
+inactive-fg #44475a
+
+# Cor do fundo da tela (Opcional, deixe vazio para transparente)
+# background #282a36
+
+# Cor da Data -> Rosa
+date-fg #ff79c6
+
+# Preenchimento e Tamanho
+# Ajuste o block-x e block-y para mudar o tamanho do relógio
+block-x 4
+block-y 2
+padding-x 2
+padding-y 1
